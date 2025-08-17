@@ -119,6 +119,16 @@
   <div class="contenedor-boton">
     <button class="btn" onclick="cambiarPantalla()">Tócame ✨</button>
   </div>
+   <!-- Música de fondo -->
+  <audio id="musica" autoplay loop>
+    <source src="cancion1.mp3" type="audio/mpeg">
+    Tu navegador no soporta el audio 🎵
+  </audio>
+
+    <!-- Botón de emergencia -->
+  <button id="activarMusica" class="btn" style="display:none; margin-top:20px;">
+    🔊 Activar música
+  </button>
 </div>
 
 
@@ -151,9 +161,27 @@
       }, 6000);
     }
     setInterval(crearCorazon, 500);
+
+    window.addEventListener("load", () => {
+  const musica = document.getElementById("musica");
+  const activarBtn = document.getElementById("activarMusica");
+
+  musica.volume = 0.7; // volumen inicial 70%
+  
+  musica.play().catch(() => {
+    console.log("El navegador bloqueó el autoplay.");
+    activarBtn.style.display = "inline-block"; // mostramos el botón de emergencia
+  });
+
+  activarBtn.addEventListener("click", () => {
+    musica.play();
+    activarBtn.style.display = "none"; // ocultamos el botón después de activarlo
+  });
+});
   </script>
 </body>
 </html>
+
 
 
 
