@@ -93,15 +93,34 @@
       .pantalla2 p { font-size: 1rem; }
       .foto-inicio { height: 300px; max-width: 95%; }
     }
+
+  .contenedor-foto, .contenedor-boton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.contenedor-boton {
+  margin-top: 15px;
+}
+
   </style>
 </head>
 <body>
   <!-- Pantalla 1 -->
-  <div id="pantalla1" class="pantalla activa">
+<div id="pantalla1" class="pantalla activa">
   <h1>Esta página la hice con todo el cariño posible, espero que te guste 💖</h1>
+  
+  <div class="contenedor-foto">
     <img src="fotoRei2.jpg" alt="Foto especial" class="foto-inicio">
+  </div>
+  
+  <div class="contenedor-boton">
     <button class="btn" onclick="cambiarPantalla()">Tócame ✨</button>
   </div>
+</div>
+
 
   <!-- Pantalla 2 -->
   <div id="pantalla2" class="pantalla pantalla2">
@@ -135,6 +154,7 @@
   </script>
 </body>
 </html>
+
 
 
 
